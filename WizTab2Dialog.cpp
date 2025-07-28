@@ -72,7 +72,7 @@ void CWizTab2Dialog::OnButtonTab2Selfont()
 	{
 		dlg.GetCurrentFont(&lf);
 		m_Static_Font.SetWindowText(lf.lfFaceName);
-		GetParent()->GetParent()->SendMessage(WM_TAB2_MESSAGE,TAB2_FONT,0);
+		GetParent()->GetParent()->PostMessageA(WM_TAB2_MESSAGE,TAB2_FONT,0);
 	}
 }
 
@@ -83,7 +83,7 @@ void CWizTab2Dialog::OnStaticSwtab2Fgcolor()
 	if(id == IDOK)
 	{
 		this->m_Static_FgColor.SetColor(dlg.GetColor());
-		GetParent()->GetParent()->SendMessage(WM_TAB2_MESSAGE,TAB2_TEXTCOLOR,dlg.GetColor());
+		GetParent()->GetParent()->PostMessageA(WM_TAB2_MESSAGE,TAB2_TEXTCOLOR,dlg.GetColor());
 	}
 }
 
@@ -94,7 +94,7 @@ void CWizTab2Dialog::OnStaticSwtab2Bkcolor()
 	if(id == IDOK)
 	{
 		this->m_Static_BkColor.SetColor(dlg.GetColor());
-		GetParent()->GetParent()->SendMessage(WM_TAB2_MESSAGE,TAB2_TEXTBKCOLOR,dlg.GetColor());
+		GetParent()->GetParent()->PostMessageA(WM_TAB2_MESSAGE,TAB2_TEXTBKCOLOR,dlg.GetColor());
 	}
 	
 }

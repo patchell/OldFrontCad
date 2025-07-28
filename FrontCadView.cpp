@@ -1558,7 +1558,7 @@ void CFrontCadView::OnLButtonUp(UINT nFlags, CPoint point)
 			m_Drawmode = 0;	// no draw mode
 			{
 				CPoint Ref = m_SnapPos;
-				((CFrontCadApp *)AfxGetApp())->GetLibView()->SendMessage(WM_MAINVIEW_GOTREF, Ref.x, Ref.y);
+				((CFrontCadApp *)AfxGetApp())->GetLibView()->PostMessageA(WM_MAINVIEW_GOTREF, Ref.x, Ref.y);
 			}
 			break;
 		case DrawMode::MOVE:		//mouse up
@@ -1652,7 +1652,6 @@ void CFrontCadView::OnLButtonUp(UINT nFlags, CPoint point)
 				Rsel.NormalizeRect();
 				CCadDrawing *pD = pDoc->GetDrawing();
 				CCadObject *pObj = pD->GetHead();
-//				CScale sf = CScale(ZF[m_ZoomLevel], ZF[m_ZoomLevel]);
 				CScale sf = CScale(1.0, 1.0);
 				while(pObj)
 				{
@@ -1668,6 +1667,8 @@ void CFrontCadView::OnLButtonUp(UINT nFlags, CPoint point)
 					pObj = pObj->GetNext();
 				}
 			}
+			m_nSelRegionLock = 0;
+			m_Drawmode = DrawMode::SELECT;
 			Invalidate();
 //			m_Drawmode = DrawMode::SELECT;
 			break;
@@ -3037,7 +3038,9 @@ LRESULT CFrontCadView::OnUtilMessage(WPARAM wP, LPARAM lP)
 			}
 			break;
 	}
-	((CMainFrame *)GetParent())->FocusOnMainView();
+	this->SetForegroundWindow();
+//	((CMainFrame *)GetParent())->FocusOnMainView();
+//	SetFocus();
 	return 0;
 }
 

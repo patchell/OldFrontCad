@@ -46,7 +46,7 @@ BOOL CMyEdit::PreTranslateMessage(MSG* pMsg)
 //				GetWindowText(s,255);
 //				int v = atoi(s);
 //				delete s;
-				if(m_pW)m_pW->SendMessage(m_WMsg,m_ObjMsg,0);
+				if(m_pW)m_pW->PostMessageA(m_WMsg,m_ObjMsg,0);
 //				wC = GetParent()->GetFocus();
 //				wC = GetParent()->GetNextDlgTabItem(wC);	//reset the focus
 //				wC->SetFocus();

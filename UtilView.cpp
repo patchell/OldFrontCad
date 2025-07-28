@@ -1340,7 +1340,7 @@ void CUtilView::OnButtonUtilityFont()
 	{
 		dlg.GetCurrentFont(&lF);
 		m_Button_Font.SetWindowText(lF.lfFaceName);
-		m_pCadView->SendMessage(WM_UTILMESSAGE,UtilMsg::FONT,0);
+		m_pCadView->PostMessageA(WM_UTILMESSAGE,UtilMsg::FONT,0);
 	}
 }
 

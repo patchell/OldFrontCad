@@ -35,7 +35,7 @@ END_MESSAGE_MAP()
 void CComboBoxPrintRect::OnCbnSelchange()
 {
 	int v = GetCurSel();
-	if (m_pW)m_pW->SendMessage(m_WMsg, m_ObjMsg, v);
+	if (m_pW)m_pW->PostMessageA(m_WMsg, m_ObjMsg, v);
 }
 
 BOOL CComboBoxPrintRect::PreTranslateMessage(MSG* pMsg)
@@ -47,7 +47,7 @@ BOOL CComboBoxPrintRect::PreTranslateMessage(MSG* pMsg)
 		{
 			CWnd *wC;
 			int v = GetCurSel();
-			if (m_pW)m_pW->SendMessage(m_WMsg, m_ObjMsg, v);
+			if (m_pW)m_pW->PostMessageA(m_WMsg, m_ObjMsg, v);
 			wC = GetParent()->GetFocus();
 			wC = GetParent()->GetNextDlgTabItem(wC);	//reset the focus
 			wC->SetFocus();

@@ -57,7 +57,7 @@ BOOL CComboBoxFontWeight::PreTranslateMessage(MSG* pMsg)
 			{
 				CWnd *wC;
 				int v = GetCurSel();
-				if(m_pW)m_pW->SendMessage(m_WMsg,m_ObjMsg,FW[v]);
+				if(m_pW)m_pW->PostMessageA(m_WMsg,m_ObjMsg,FW[v]);
 				wC = GetParent()->GetFocus();
 				wC = GetParent()->GetNextDlgTabItem(wC);	//reset the focus
 				wC->SetFocus();
@@ -120,7 +120,7 @@ void CComboBoxFontWeight::Init()
 void CComboBoxFontWeight::OnSelchange() 
 {
 	int v = GetCurSel();
-	if(m_pW)m_pW->SendMessage(m_WMsg,m_ObjMsg,FW[v]);
+	if(m_pW)m_pW->PostMessageA(m_WMsg,m_ObjMsg,FW[v]);
 }
 
 int CComboBoxFontWeight::GetFontWeight()

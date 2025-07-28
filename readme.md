@@ -1,5 +1,8 @@
 Move along folks, nothing to see here, move along.
 
+July 28, 2025
+Fixed a few more bugs.  Plenty more from where those came from.
+
 July 20, 2025
 
 The new version is not complete, and I really could use

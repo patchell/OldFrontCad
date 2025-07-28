@@ -70,7 +70,7 @@ void CScaleWizTabOne::OnStaticTab1Subcolor()
 	if(id == IDOK)
 	{
 		this->m_Static_SubColor.SetColor(dlg.GetColor());
-		GetParent()->GetParent()->SendMessage(WM_TAB1_MESSAGE,TAB1_SUBCOLOR,dlg.GetColor());
+		GetParent()->GetParent()->PostMessageA(WM_TAB1_MESSAGE,TAB1_SUBCOLOR,dlg.GetColor());
 	}
 }
 
@@ -81,7 +81,7 @@ void CScaleWizTabOne::OnStaticTab1Arccolor()
 	if(id == IDOK)
 	{
 		this->m_Static_ArcColor.SetColor(dlg.GetColor());
-		GetParent()->GetParent()->SendMessage(WM_TAB1_MESSAGE,TAB1_ARCCOLOR,dlg.GetColor());
+		GetParent()->GetParent()->PostMessageA(WM_TAB1_MESSAGE,TAB1_ARCCOLOR,dlg.GetColor());
 	}
 	
 }
@@ -93,7 +93,7 @@ void CScaleWizTabOne::OnStaticTab1Divcolor()
 	if(id == IDOK)
 	{
 		this->m_Static_DivColor.SetColor(dlg.GetColor());
-		GetParent()->GetParent()->SendMessage(WM_TAB1_MESSAGE,TAB1_DIVCOLOR,dlg.GetColor());
+		GetParent()->GetParent()->PostMessageA(WM_TAB1_MESSAGE,TAB1_DIVCOLOR,dlg.GetColor());
 	}
 	
 }

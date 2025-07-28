@@ -70,9 +70,8 @@ public:
 	CStatic	m_Static_FillColorText;
 	CStaticBitmap	m_Static_LineColor;
 	CStaticBitmap	m_Static_FillColor;
-	//}}AFX_DATA
-
-// Attributes
+	CComboBoxPrintRect m_Combo_PrintRect;
+	CButtonMsg m_Check_TransparentFill;
 public:
 
 // Operations
@@ -113,17 +112,8 @@ protected:
 	afx_msg void OnStaticUtilTextbkcolor();
 	afx_msg void OnStaticUtilBackgroundcolor();
 	afx_msg void OnCheckTransparent();
-	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
-public:
-	CComboBoxPrintRect m_Combo_PrintRect;
-	CButtonMsg m_Check_TransparentFill;
     afx_msg void OnClickedCheckUtilTransparent();
 };
 
-/////////////////////////////////////////////////////////////////////////////
-
-//{{AFX_INSERT_LOCATION}}
-// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
-
-#endif // !defined(AFX_UTILVIEW_H__107FE601_C0AE_410F_A5D3_34F0F65A4240__INCLUDED_)
+#endif 

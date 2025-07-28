@@ -65,7 +65,7 @@ void CButtonMsg::SetCheck(int nCheck)
 	///		nCheck....State to set check box to
 	///-------------------------------------------
 	CButton::SetCheck(nCheck);
-	if(m_pW)m_pW->SendMessage(m_WMsg,m_ObjMsg,nCheck);
+	if(m_pW)m_pW->PostMessageA(m_WMsg,m_ObjMsg,nCheck);
 }
 
 void CButtonMsg::SetCheck(int nCheck, int Message)
@@ -79,6 +79,6 @@ void CButtonMsg::SetCheck(int nCheck, int Message)
 	//		Message...Flag, if true, send message
 	//-------------------------------------------
 	CButton::SetCheck(nCheck);
-	if(m_pW && Message)m_pW->SendMessage(m_WMsg,m_ObjMsg,nCheck);
+	if(m_pW && Message)m_pW->PostMessageA(m_WMsg,m_ObjMsg,nCheck);
 
 }

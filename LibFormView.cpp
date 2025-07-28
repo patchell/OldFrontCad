@@ -76,7 +76,7 @@ void CLibFormView::OnButtonLibviewCreatecomp()
 {
 	MessageBox("Select Reference Point","Hey Dude!");
 	CFrontCadView *pFCV = ((CFrontCadApp *)AfxGetApp())->GetMainView();
-	pFCV->SendMessage(WM_LIBVIEW_GETREF);
+	pFCV->PostMessageA(WM_LIBVIEW_GETREF);
 }
 
 void CLibFormView::OnButtonLibviewPlace() 

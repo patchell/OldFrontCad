@@ -116,7 +116,7 @@ void CHorzScrollBar::SetScrollPos(int v)
 	pos = v;
 	Modified = 1;
 	if(m_pWmsg)
-		m_pWmsg->SendMessage(ActionMessage,(WPARAM)v,0l);
+		m_pWmsg->PostMessageA(ActionMessage,(WPARAM)v,0l);
 	if(LongMasterValue)
 		*LongMasterValue = (long)pos;
 	if(IntMasterValue)
